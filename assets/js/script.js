@@ -1,5 +1,4 @@
 // Wait for the DOM to finish loading before running the game
-// Get the button elements and add event listeners to them
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
 
@@ -14,14 +13,15 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Allow user to press "Enter" to submit answer
+    // Allow "Enter" key to submit answer
     document.getElementById("answer-box").addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
             checkAnswer();
         }
     });
 
-    runGame("addition"); // Start the game with addition by default
+    // Start the game with addition by default
+    runGame("addition");
 });
 
 /**
@@ -29,13 +29,13 @@ document.addEventListener("DOMContentLoaded", function() {
  * and after every answer has been processed
  */
 function runGame(gameType) {
-    // Clear the input box and set focus
-    document.getElementById("answer-box").value = "";
-    document.getElementById("answer-box").focus();
-
-    // Create two random numbers between 1 and 25
+    // Generate two random numbers between 1 and 25
     let num1 = Math.floor(Math.random() * 25) + 1;
     let num2 = Math.floor(Math.random() * 25) + 1;
+
+    // Clear input box and focus
+    document.getElementById("answer-box").value = "";
+    document.getElementById("answer-box").focus();
 
     if (gameType === "addition") {
         displayAdditionQuestion(num1, num2);
@@ -52,8 +52,8 @@ function runGame(gameType) {
 }
 
 /**
- * Checks the answer against the first element in 
- * the returned calculateCorrectAnswer array
+ * Checks the answer against the first element in the 
+ * calculateCorrectAnswer array
  */
 function checkAnswer() {
     let userAnswer = parseInt(document.getElementById("answer-box").value);
@@ -64,7 +64,7 @@ function checkAnswer() {
         alert("Hey! You got it right! :D");
         incrementScore();
     } else {
-        alert(`Aww... you answered ${userAnswer}. The correct answer was ${calculatedAnswer[0]}!`);
+        alert(`Awwww... you answered ${userAnswer}. The correct answer was ${calculatedAnswer[0]}!`);
         incrementWrongAnswer();
     }
 
@@ -72,7 +72,7 @@ function checkAnswer() {
 }
 
 /**
- * Gets the operands and the operator directly from the DOM,
+ * Gets the operands and the operator directly from the DOM
  * and returns the correct answer.
  */
 function calculateCorrectAnswer() {
@@ -94,23 +94,16 @@ function calculateCorrectAnswer() {
     }
 }
 
-/**
- * Gets the current score from the DOM and increments it by 1
- */
 function incrementScore() {
     let oldScore = parseInt(document.getElementById("score").innerText);
     document.getElementById("score").innerText = ++oldScore;
 }
 
-/**
- * Gets the current tally of incorrect answers from the DOM and increments it by 1
- */
 function incrementWrongAnswer() {
     let oldScore = parseInt(document.getElementById("incorrect").innerText);
     document.getElementById("incorrect").innerText = ++oldScore;
 }
 
-// Display functions for different math operations
 function displayAdditionQuestion(operand1, operand2) {
     document.getElementById('operand1').textContent = operand1;
     document.getElementById('operand2').textContent = operand2;
@@ -118,6 +111,7 @@ function displayAdditionQuestion(operand1, operand2) {
 }
 
 function displaySubtractQuestion(operand1, operand2) {
+    // Ensure the larger number is always first for subtraction
     document.getElementById('operand1').textContent = operand1 > operand2 ? operand1 : operand2;
     document.getElementById('operand2').textContent = operand1 > operand2 ? operand2 : operand1;
     document.getElementById('operator').textContent = "-";
@@ -130,8 +124,9 @@ function displayMultiplyQuestion(operand1, operand2) {
 }
 
 function displayDivisionQuestion(operand1, operand2) {
-    // Ensure result is a whole number for simplicity
-    document.getElementById('operand1').textContent = (operand1 * operand2);
+    // Ensure we get whole numbers for division
+    operand1 = operand1 * operand2; 
+    document.getElementById('operand1').textContent = operand1;
     document.getElementById('operand2').textContent = operand2;
     document.getElementById('operator').textContent = "/";
 }
