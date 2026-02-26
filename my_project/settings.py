@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'hello_world',
+    'game',
 ]
 
 MIDDLEWARE = [
@@ -127,6 +128,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+# Configure Static Files
 STATIC_URL = 'static/'
 
 # Default primary key field type

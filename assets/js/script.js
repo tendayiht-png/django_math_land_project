@@ -37,3 +37,14 @@ function displaySubtractQuestion() {
 function displayMultiplyQuestion() {
     
 }
+
+function saveScoreToDjango(correct, incorrect) {
+    fetch('/save-score/', {
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': getCookie('csrftoken'), // Django security requirement
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `correct=${correct}&incorrect=${incorrect}`
+    }).then(response => console.log("Score Saved!"));
+}
