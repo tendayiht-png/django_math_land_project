@@ -3,9 +3,10 @@ from django.contrib.auth.models import User
 
 class GameScore(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    correct_score = models.IntegerField(default=0)
-    incorrect_score = models.IntegerField(default=0)
-    date_played = models.DateTimeField(auto_now_add=True)
+    score = models.IntegerField(default=0)
+    incorrect = models.IntegerField(default=0)
+    game_type = models.CharField(max_length=20)
+    timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.user.username} - {self.date_played}"
+        return f"{self.user.username} - {self.game_type}: {self.score}"

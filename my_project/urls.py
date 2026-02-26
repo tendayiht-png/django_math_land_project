@@ -21,4 +21,10 @@ urlpatterns = [
     path('', views.math_game, name='math_game'),
 ]
 
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('save-score/', views.save_score, name='save_score'),
+]
 

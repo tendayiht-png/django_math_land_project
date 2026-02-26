@@ -1,7 +1,42 @@
-// Wait for the DOM to finish loading before running the game
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded",function () {
     let buttons = document.getElementsByTagName("button");
+})
 
+for (let button of buttons) {
+    
+}
+
+function runGame() {
+
+}
+
+function checkAnswer() {
+    
+}
+
+function calculateCorrectAnswer() {
+    
+}
+
+function incrementScore() {
+    
+}
+
+function incrementWrongAnswer() {
+    
+}
+
+function displayAdditionQuestion() {
+    
+}
+
+function displaySubtractQuestion() {
+    
+}
+
+function displayMultiplyQuestion() {
+    
+}
     for (let button of buttons) {
         button.addEventListener("click", function() {
             if (this.getAttribute("data-type") === "submit") {
@@ -129,4 +164,40 @@ function displayDivisionQuestion(operand1, operand2) {
     document.getElementById('operand1').textContent = operand1;
     document.getElementById('operand2').textContent = operand2;
     document.getElementById('operator').textContent = "/";
+}
+
+function saveScoreToDatabase(gameType) {
+    const score = parseInt(document.getElementById("score").innerText);
+    const incorrect = parseInt(document.getElementById("incorrect").innerText);
+
+    fetch('/save-score/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCookie('csrftoken') // Function to get CSRF token from cookies
+        },
+        body: JSON.stringify({
+            score: score,
+            incorrect: incorrect,
+            game_type: gameType
+        })
+    })
+    .then(response => response.json())
+    .then(data => console.log("Score saved:", data));
+}
+
+// Helper to get CSRF token from Django cookies
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
 }
