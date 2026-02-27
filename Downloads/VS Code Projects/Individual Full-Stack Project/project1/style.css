@@ -1,0 +1,177 @@
+h1 {
+  color: Red;
+}
+
+h2 {
+  color: green;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+#article-title {
+  font-family: Tahoma;
+}
+
+html, body {
+  margin: 0px;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  background-color: Darkslategray;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  z-index: visible;
+  }
+
+nav {
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+nav li {
+  color: #fff;
+  font-family: 'Open Sans', Sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: left;
+  display: inline-block;
+  width: 80px;
+  }
+
+main {
+  text-align: center;
+  position: relative;
+  top: 80px;
+}
+
+main h1 {
+  display: flex;
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 70px;
+  margin: 0 auto;
+  padding: 100px 100px;
+  text-transform: uppercase;
+}
+
+footer {
+  display: flex;
+  background-color: #333;
+  color: #fff;
+  padding: 30px 45px;
+  margin-bottom: 10px;
+  }
+
+footer p {
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.container {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.jumbotron {
+  height: 800px;
+  background-image: url("https://content.codecademy.com/projects/broadway/bg.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.btn-main {
+  background-color: #333;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 1.3px;
+  padding: 16px 40px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.btn-default {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 2px;
+  padding: 10px 20px;
+  text-decoration: none;
+  text-transform: uppercase;  
+  margin-bottom: 20px;      
+}
+
+.supporting {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px; 
+  padding-bottom: 45px;
+}
+
+.supporting .col {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  width: 200px;
+  display: inline;
+  height: 200px;
+}
+
+.supporting img {
+  height: 45px;
+  padding: 15px 45px 0 45px;
+    }
+
+.supporting h2 {
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 25px;
+  text-transform: uppercase;
+  padding: 2px 45px;
+}
+
+.supporting p {
+  display: flex;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 0 45px 15px 45px;
+  margin: 20px 0;
+}
+
+.supporting a {
+  background-color: Tahoma;
+  color: #333333;
+  font-family: 'Raleway', Noto-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 10px 45px; 
+  margin-bottom: 10px;
+  border: 2px solid #333333;
+  }
+
+@media (max-width: 500px) {
+  main h1 {
+    font-size: 85px;
+    padding: 0 45px;
+  }
+}
