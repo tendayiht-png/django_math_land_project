@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 
+        <Form:get>
+      Pizza Order
+        </Form:get>
+    </title>
+</head>
+<body>
+    <form action="url"method="POST">
+    
+    <h1>
+        Pizza Pick-Up Order
+    </h1>
+        <div>
+            <div>
+            <label for="name-field">Name</label>
+			<input type="text" id="user"name="username" placeholder="Your username">
+        </div>
+        
+        <div>
+			<label for="email-field">Email</label>
+			<input id="email-field" type="email" name="email" placeholder="Your email">
+		</div>
+        
+        <ol>
+           <li>
+            <p>Select pizza size you like for your pizza order?</p>
+            <label for="pizza size">Pizza Size</label>
+            <select id="pizza size" name="pizza size">
+
+            <option text="large 13.5inches" value="13.5inches">large 13.5inches</option>
+            <option text="medium 11.5inches" value="11.5inches">medium 11.5inches</option>
+            <option text="small 9.5inches" value="9.5inches">small 9.5inches</option>
+            
+          </select>
+           </li>
+
+           <li>
+            <p>What toppings do you like for your pizza?</p>
+
+		<div>
+			<input type="checkbox" id="mozarella-cheese-checkbox" name="toppings">
+			<label for="mozarella-cheese-checkbox">Mozarella-cheese</label>
+		</div>
+		<div>
+			<input type="checkbox" id="ham-checkbox" name="toppings">
+			<label for="ham-checkbox">Ham</label>
+		</div>
+		<div>
+			<input type="checkbox" id="chicken-strips-checkbox" name="toppings">
+			<label for="chicken-strips-checkbox">Chicken-strips</label>
+		</div>
+		<div>
+			<input type="checkbox" id="smoked-bacon-rashers-checkbox" name="toppings">
+			<label for="smoked-bacon-rashers-checkbox">Smoked-bacon-rashers</label>
+        </div>
+        <div>
+            <input type="checkbox" id="pepperoni-checkbox" name="toppings">
+			<label for="pepperoni-checkbox">Pepperoni</label>
+        </div>
+        <div>
+            <input type="checkbox" id="cumberland-sausage-checkbox" name="toppings">
+			<label for="cumberland-sausage-checkbox">Cumberland-sausage</label>
+        </div>
+                
+        </li>
+
+        <li>
+        
+        <p>What type of crust do you like for your pizza?</p>
+        
+        <input id="crispy-thin-radio" name="crust" value="crispy-thin-radio" type="radio">
+		<label for="crispy-thin-radio">Crispy-thin</label>
+        
+        <input id="thick-radio" name="crust" value="thick" type="radio">
+		<label for="thick-radio">Thick</label>
+
+		<input id="stuffed-radio" name="crust" value="stuffed" type="radio">
+		<label for="stuffed-radio">Stuffed</label>
+        </li>
+    
+        </ol>
+
+		<input type="submit">
+    </form>
+</body>
+</html>
