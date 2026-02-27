@@ -1,3 +1,0 @@
-﻿# django_project
-
-
